@@ -5,9 +5,13 @@ Example:
 N = 6 
 factors = {1, 2, 3, 6}
 Make sure the returned array is sorted
+youtube:
+--------
+https://www.youtube.com/watch?v=dolcMgiJ7I0&feature=emb_err_woyt
 
 Program:
-----------
+===============
+
 import java.util.*;
 public class Main 
 {
