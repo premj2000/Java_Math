@@ -1,3 +1,4 @@
+import java.util.*;
 public class Main
  {
     public static  int gcd(int A, int B) 
@@ -10,11 +11,15 @@ public class Main
     
     public static void main(String args[])
     {
-      int gcd=gcd(12,30);
-      System.out.println(gcd);
+      Scanner in =new Scanner(System.in);
+      int a=in.nextInt();
+      int b=in.nextInt();
+      System.out.println("gcd is :"+gcd(a,b));
     }
 }
 
 output:
 ------------------
-6
+5
+25
+gcd is:  5
