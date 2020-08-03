@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main 
+{
+   public static String findDigitsInBinary(int num) 
+    {                                                         //Build in function ==> Integer.toBinaryString(num)
+        if(num==0)
+            return "0";            
+        int rem=0;
+        String ans="";
+        while(num>0)
+        {
+            rem=num%2;
+            ans=rem+ans;
+            num=num/2;
+        }
+        return ans;
+    }
+    public static void main(String args[])
+	  {
+		  Scanner in=new Scanner(System.in);
+		  int n=in.nextInt();
+		  String res = findDigitsInBinary(n);
+		  System.out.println(res);
+      }
+}
+
+
+output:
+-------
+9
+1001
