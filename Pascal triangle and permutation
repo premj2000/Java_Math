@@ -1,0 +1,56 @@
+Explanation:
+-------------
+pascal triangle:
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+
+nCr
+n->row
+r-> column
+nC0==>1
+nCr==>1 where r=n
+ncr=pascal[n-1][r]+pascal[n-1][r-1]
+
+Program:
+-----------
+import java.util.*;
+public class Main
+{
+    static ArrayList<ArrayList<Integer>> pascal=new ArrayList<ArrayList<Integer>>();
+    public static void formPascal(int n)
+    {
+        for(int row=0;row<=n;row++)
+        {
+            ArrayList<Integer> temp=new ArrayList<Integer>();
+            for(int col=0;col<=row;col++)
+            {
+                int val=0;
+                if(row==col || col==0)                                        
+                    val=1;
+                else
+                    val=pascal.get(row-1).get(col-1)+pascal.get(row-1).get(col);
+                temp.add(val);
+            }
+            
+            pascal.add(temp);
+        }
+        
+    }
+	public static void main(String[] args) 
+	{
+	    
+	    formPascal(5);
+	    System.out.println(pascal);
+	    System.out.println(pascal.get(3).get(2));       //3C2=> 3rd row and 2nd column
+	}
+}
+
+
+output:
+--------
+[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1]]                                                 
+3
