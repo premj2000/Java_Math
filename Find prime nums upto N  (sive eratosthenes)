@@ -1,0 +1,43 @@
+import java.util.*;
+public class Main 
+{
+    public static ArrayList<Integer> sieve(int n) 
+    {   
+        boolean primes[]=new boolean[n+1];                                //to store status of all nums upto N in an  array
+        ArrayList<Integer> res=new ArrayList<Integer>();
+        
+        for(int i=0;i<=n;i++)
+            primes[i]=true;                                        //set all as primes
+        primes[0]=false;                                            //0 and 1 are not prime
+        primes[1]=false;
+        
+        for(int i=2;i<=n;i++)
+        {
+            if(primes[i]==true)
+            {
+                res.add(i);                           
+                for(int m=2;i*m<=n;m++)
+                    primes[i*m]=false;                            //if i is prime then all its multiples are not prime
+            }
+        }
+        return res;
+
+    }
+    public static void main(String args[])
+	  {
+		  Scanner in=new Scanner(System.in);
+		  int n=in.nextInt();
+		  ArrayList<Integer> primes=sieve(n);
+		  for(int prime: primes)
+		    System.out.println(prime);
+    }
+}
+
+Output:
+---------
+14
+2 3 5 7 11 13
+Source youtube:
+----------------
+https://www.youtube.com/watch?v=eKp56OLhoQs&feature=emb_err_woyt
+
