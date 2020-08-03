@@ -1,0 +1,46 @@
+Explanation:
+-------------
+Given a number N, find all factors of N.
+Example:
+N = 6 
+factors = {1, 2, 3, 6}
+Make sure the returned array is sorted
+
+Program:
+----------
+import java.util.*;
+public class Main 
+{
+    public static  ArrayList<Integer> allFactors(int num) 
+    {
+        ArrayList<Integer> list1=new ArrayList<Integer>();        //to store factor 
+        LinkedList<Integer> list2=new LinkedList<>();             //to store factors another pair
+        
+        for(int i=1;i<=Math.sqrt(num);i++)
+            {
+                if(num%i==0)                                    //if rem is zero then its factor
+                {
+                    list1.add(i);
+                    if(num/i!=i)                              //it has pairs of factors
+                        list2.addFirst(num/i);                //(a,b)=num  them num/a=b 
+                }         
+            }
+            
+        list1.addAll(list2);
+         return list1;
+    }
+    public static void main (String[] args) 
+    {
+       Scanner in=new Scanner(System.in);
+       int num=in.nextInt();
+       ArrayList<Integer> list=allFactors(num);
+       for (int x : list)
+        System.out.println(x);
+       
+    }
+}
+
+output:
+---------
+8
+1 2 4 8
