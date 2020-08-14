@@ -1,0 +1,29 @@
+/*
+Find sum of digits of a given number until it comes as single digit
+*/
+
+
+import java.util.Scanner;
+
+class SumOfDigit
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner (System.in);
+        int num=in.nextInt();
+        if(num%9==0)                      //if a number completely divides by 9 then its dum of digit is 9
+            System.out.println("9");
+        else                               //otherwise its remainder
+            System.out.println(num%9);
+
+
+    }
+}
+
+output:
+--------
+2345              // 2+3+4+5=14 => 1+4 = 5
+o/p:5
+
+333             //3+3+3=9
+o/p:9
