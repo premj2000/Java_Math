@@ -20,7 +20,7 @@ Program:
 import java.util.*;
 public class Main
 {
-    static ArrayList<ArrayList<Integer>> pascal=new ArrayList<ArrayList<Integer>>();
+    static ArrayList<ArrayList<Integer>> pascal=new ArrayList<ArrayList<Integer>>();		//*****declare it as global
     public static void formPascal(int n)
     {
         for(int row=0;row<=n;row++)
