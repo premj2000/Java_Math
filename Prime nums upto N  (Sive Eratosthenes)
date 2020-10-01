@@ -3,24 +3,24 @@ public class Main
 {
     public static ArrayList<Integer> sieve(int n) 
     {   
-        boolean primes[]=new boolean[n+1];                                //to store status of all nums upto N in an  array
-        ArrayList<Integer> res=new ArrayList<Integer>();
+        boolean isPrime[]=new boolean[n+1];                                //to store status of all nums upto N in an  array
+        ArrayList<Integer> primes=new ArrayList<Integer>();
         
         for(int i=0;i<=n;i++)
-            primes[i]=true;                                        //set all as primes
-        primes[0]=false;                                            //0 and 1 are not prime
-        primes[1]=false;
+            isPrime[i]=true;                                        //set all as primes
+        isPrime[0]=false;                                            //0 and 1 are not prime
+        isPrime[1]=false;
         
         for(int i=2;i<=n;i++)
         {
-            if(primes[i]==true)
+            if(isPrime[i]==true)
             {
-                res.add(i);                           
+                primes.add(i);                           
                 for(int m=2;i*m<=n;m++)
-                    primes[i*m]=false;                            //if i is prime then all its multiples are not prime
+                    isPrime[i*m]=false;                            //if i is prime then all its multiples are not prime
             }
         }
-        return res;
+        return primes;
 
     }
     public static void main(String args[])
